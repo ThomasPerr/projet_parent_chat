@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModelsCommunautesTable extends Migration
+class CreateCommunautesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateModelsCommunautesTable extends Migration
      */
     public function up()
     {
-        Schema::create('models_communautes', function (Blueprint $table) {
+        Schema::create('communautes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('description');
+            $table->string('nom_commu');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateModelsCommunautesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('models_communautes');
+        Schema::dropIfExists('communautes');
     }
 }

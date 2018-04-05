@@ -17,3 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->group(function () {
+    Route::resource('profile', 'UserController', [
+        'only' => ['edit', 'update'],
+        'parameters' => ['profile' => 'user']
+    ]);
+});

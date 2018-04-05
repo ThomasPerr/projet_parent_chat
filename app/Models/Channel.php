@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Communaute extends Model
+class Channel extends Model
 {
     //
 }
