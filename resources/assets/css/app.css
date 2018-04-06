@@ -1,6 +1,10 @@
 body {
-    background-color: green;
+    background-color: white;
     padding-top: 70px;
+    background-image: url(../images/tc.jpg);
+    background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
 }
 
 .card {

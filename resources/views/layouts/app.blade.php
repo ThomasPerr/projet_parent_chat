@@ -21,9 +21,13 @@
                 <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
 				<li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
             @else
+            	<li class="nav-item{{ currentRoute(route('accueil')) }}">
+            	<a class="nav-link" href="{{ route('accueil') }}">@lang('Accueil')</a>
+            	</li>
+            	
             	<li class="nav-item{{ currentRoute(route('profile.edit', auth()->id())) }}">
             	<a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('Profil')</a>
-            	</li>
+            	</li>           
                 
                 <li class="nav-item">
                     <a id="logout" class="nav-link" href="{{ route('logout') }}">@lang('Déconnexion')</a>
@@ -35,6 +39,18 @@
         </ul>
     </div>
 </nav>
+
+@if (session('ok'))
+    <div class="container">
+        <div class="alert alert-dismissible alert-success fade show" role="alert">
+            {{ session('ok') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+@endif
+
 @yield('content')
 <script src="{{ asset('js/app.js') }}"></script>
 @yield('script')
