@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AccueilController extends Controller
@@ -10,12 +11,12 @@ class AccueilController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view ('/users/accueil');
-    }
-
+     */   
+        public function index()
+        {
+            $users = User::all();
+            return view('/users/accueil')->with('users', $users);
+        }
     /**
      * Show the form for creating a new resource.
      *

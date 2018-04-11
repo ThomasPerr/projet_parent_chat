@@ -16,13 +16,16 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('accueil', 'AccueilController@index')->name('accueil');
 
+Route::get('chat', 'ChatController@index')->name('chat');
+
+/*
+Route::get('sujet', 'SujetController@index')->name('sujet');*/
+
+Route::resource('channel', 'ChannelController');
+
 Route::middleware('auth')->group(function () {
     Route::resource('profile', 'UserController', [
         'only' => ['edit', 'update'],
         'parameters' => ['profile' => 'user']
     ]);
-    /*Route::resource('accueil', 'AccueilController', [
-            'only' => ['index'],
-            'parameters' => ['accueil' => 'user']
-        ]);*/
 });

@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Album') }}</title>
+    <title>{{ config('app.name', "Les_enfants_d'abord") }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
 </head>
 <body>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name', "Les enfants d'abord") }}</a>
+    <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name', "Les_enfants_d'abord") }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,7 +27,7 @@
             	
             	<li class="nav-item{{ currentRoute(route('profile.edit', auth()->id())) }}">
             	<a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('Profil')</a>
-            	</li>           
+            	</li>        
                 
                 <li class="nav-item">
                     <a id="logout" class="nav-link" href="{{ route('logout') }}">@lang('Déconnexion')</a>
