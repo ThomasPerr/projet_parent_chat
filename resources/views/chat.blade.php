@@ -1,7 +1,7 @@
 @extends('users.accueil')
 
 @section('chat')               
-               <div class="right-box">
+               
                    <div class="box-chat">
                        <div class="discussion">
                            <div class="message">
@@ -27,5 +27,5 @@
                                    </form>
                                </div>
                     </div>
-                  </div>
+                  
 @endsection

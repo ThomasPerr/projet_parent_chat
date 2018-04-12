@@ -21,8 +21,9 @@ Route::get('chat', 'ChatController@index')->name('chat');
 /*
 Route::get('sujet', 'SujetController@index')->name('sujet');*/
 
-Route::resource('channel', 'ChannelController');
 
+Route::get('channel', 'ChannelController@index')->name('channel');
+    
 Route::middleware('auth')->group(function () {
     Route::resource('profile', 'UserController', [
         'only' => ['edit', 'update'],

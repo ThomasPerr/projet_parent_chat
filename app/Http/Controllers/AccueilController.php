@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Communaute;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AccueilController extends Controller
 {
@@ -14,8 +15,9 @@ class AccueilController extends Controller
      */   
         public function index()
         {
-            $users = User::all();
-            return view('/users/accueil')->with('users', $users);
+            $users = Auth::user();
+            $communautes = Communaute::all();
+            return view('/users/accueil')->with('users', $users)->with('communautes' , $communautes);
         }
     /**
      * Show the form for creating a new resource.

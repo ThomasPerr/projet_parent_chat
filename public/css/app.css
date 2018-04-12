@@ -9018,6 +9018,7 @@ body {
     width: 200%;
     margin-bottom: 5%;
     display: block;
+    padding: 4% 0 4% 0;
 }
 
 .left-box {
@@ -9034,7 +9035,7 @@ body {
 .box-chat {
     background-color: #343a40;
     padding: 10%;
-    width: 180%;
+    width: 200%;
     color: #ffffff;
 }
 

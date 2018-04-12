@@ -21,8 +21,8 @@
                 <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
 				<li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
             @else
-            	<li class="nav-item{{ currentRoute(route('accueil')) }}">
-            	<a class="nav-link" href="{{ route('accueil') }}">@lang('Accueil')</a>
+            	<li class="nav-item{{ currentRoute(route('accueil'), auth()->id()) }}">
+            	<a class="nav-link" href="{{ route(('accueil'), auth()->id()) }}">@lang('Accueil')</a>
             	</li>
             	
             	<li class="nav-item{{ currentRoute(route('profile.edit', auth()->id())) }}">

@@ -9,27 +9,27 @@
                <div class="left-box">        
                    <div class="card-profile">
                         <div class="card-body">
-                            <h3 class="card-title">{ $users->role }</h3>
-                            <h3 class="card-title">{ $users->lastname }</h3>
-                            <h3 class="card-title">{ $users->name }</h3>
-                             <h3 class="card-title">{ $users->email }</h3>
+                            <h3 class="card-title">{{ $users->role }}</h3>
+                            <h3 class="card-title">{{ $users->lastname }}</h3>
+                            <h3 class="card-title">{{ $users->name }}</h3>
+                            <h3 class="card-title">{{ $users->email }}</h3>
                         </div>
                    </div>
                                     
-                   <div class="box-roles">
-                       <button type="button" class="btn btn-dark" onclick="location.href='http://localhost/projet_parent_chat/public/channel/'">Professeur</button>
-                       <button type="button" class="btn btn-dark" onclick="location.href='http://localhost/projet_parent_chat/public/channel/'">Parents</button>
-                       <button type="button" class="btn btn-dark" onclick="location.href='http://localhost/projet_parent_chat/public/channel/'">Enfants</button>
-                       
-                   </div>    
+                        <div class="box-roles">
+                        @foreach ($communautes as $communaute)
+                            <button type="button" class="btn btn-dark" onclick="location.href='{{ route('channel'), auth()->id() }}'">{{ $communaute->nom_commu }}</button>
+                        @endforeach
+                        </div>    
+                  
                </div>
                
              
                <div class="right-box">
                   @yield('channel')
+                  @yield('chat')
                </div>
-               
-               @yield('chat')
+       
                
            </div>
        </div>
