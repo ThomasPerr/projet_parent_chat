@@ -18,6 +18,18 @@ Route::get('accueil', 'AccueilController@index')->name('accueil');
 
 Route::get('chat', 'ChatController@index')->name('chat');
 
+Route::get('/chat', [
+    'uses' => 'ChatController@fetchMessages',
+    'as' => 'chat',
+    'middleware' => 'auth'
+]);
+
+Route::post('/createpost', [
+    'uses' => 'ChatController@sendMessage',
+    'as' => 'post.create',
+    'middleware' => 'auth'
+]);
+
 /*
 Route::get('sujet', 'SujetController@index')->name('sujet');*/
 
@@ -30,3 +42,4 @@ Route::middleware('auth')->group(function () {
         'parameters' => ['profile' => 'user']
     ]);
 });
+   

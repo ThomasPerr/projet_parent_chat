@@ -8996,7 +8996,7 @@ body {
 .card-profile {
     box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.5);
     background-color: #3D4450;
-    width: 100%;    
+    width: 150%;    
 }
 
 .card-profile h3 {
@@ -9005,7 +9005,7 @@ body {
 }
 
 .box-roles button[type="button"] {
-    width: 100%;
+    width: 150%;
     margin-top: 5%;
     display: block;
 }
@@ -9019,6 +9019,7 @@ body {
     margin-bottom: 5%;
     display: block;
     padding: 4% 0 4% 0;
+    margin-left: 20%;
 }
 
 .left-box {
@@ -9037,6 +9038,7 @@ body {
     padding: 10%;
     width: 200%;
     color: #ffffff;
+    margin-left: 20%;
 }
 
 .box-chat h1, h2 {
